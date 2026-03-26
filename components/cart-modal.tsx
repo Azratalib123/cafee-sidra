@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
-import { Minus, Plus, ShoppingCart, Trash2, CheckCircle, User, MapPin, Phone } from 'lucide-react'
+import { Minus, Plus, ShoppingCart, Trash2, CheckCircle } from 'lucide-react'
 import Image from "next/image"
 import { useCart, type CartItem } from "@/components/cart-context"
 
@@ -79,7 +79,7 @@ export default function CartModal({ isOpen, onClose, item }: CartModalProps) {
             </div>
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Order Confirmed!</h2>
-              <p className="text-gray-600">Thank you for your order. We'll prepare it shortly.</p>
+              <p className="text-gray-600">Thank you for your order. We&apos;ll prepare it shortly.</p>
             </div>
             <div className="bg-green-50 p-4 rounded-lg">
               <p className="text-sm text-green-800">

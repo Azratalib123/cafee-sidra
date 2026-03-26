@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Coffee, Facebook, Instagram, Twitter, Mail } from 'lucide-react'
+import { Coffee, Facebook, Instagram, Twitter, Mail } from "lucide-react"
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false)
@@ -18,6 +18,8 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
+          
+          {/* Brand Section */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Coffee className="h-8 w-8 text-amber-600" />
@@ -46,7 +48,9 @@ export default function Footer() {
                 <Twitter className="h-5 w-5" />
               </button>
               <button
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="text-gray-400 hover:text-amber-600 transition-colors"
               >
                 <Mail className="h-5 w-5" />
@@ -54,98 +58,47 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Menu
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("blogs")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Blogs
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Contact
-                </button>
-              </li>
+              {["home", "about", "menu", "blogs", "contact"].map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() =>
+                      document.getElementById(item)?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-gray-400 hover:text-white transition-colors capitalize"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Dine In
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Takeaway
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Catering
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Private Events
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Coffee Beans
-                </button>
-              </li>
+              {["Dine In", "Takeaway", "Catering", "Private Events", "Coffee Beans"].map(
+                (service) => (
+                  <li key={service}>
+                    <button
+                      onClick={() =>
+                        document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      {service}
+                    </button>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-2 text-gray-400">
@@ -157,8 +110,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">© {new Date().getFullYear()} Cafe Delight. All rights reserved.</p>
+        {/* Footer Bottom */}
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center space-y-2">
+          <p className="text-gray-400">
+            © {new Date().getFullYear()} Cafe Delight. All rights reserved.
+          </p>
+          <p className="text-sm text-gray-500">
+            Made by <span className="text-amber-600 font-semibold">Sidra Talib</span> ☕
+          </p>
         </div>
       </div>
     </footer>

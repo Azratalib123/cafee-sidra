@@ -33,7 +33,7 @@ export default function About() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Cafe Delight</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Since 2010, we've been serving the community with exceptional coffee and creating memorable experiences
+            Since 2010, we&apos;ve been serving the community with exceptional coffee and creating memorable experiences
           </p>
         </div>
 

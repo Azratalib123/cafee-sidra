@@ -9,9 +9,8 @@ import Image from "next/image"
 import { useState } from "react"
 import CartModal from "./cart-modal"
 export default function Menu() {
-  const [selectedItem, setSelectedItem] = useState<any>(null)
   const [showCartModal, setShowCartModal] = useState(false)
-  const [selectedCartItem, setSelectedCartItem] = useState<any>(null)
+  const [selectedCartItem, setSelectedCartItem] = useState<{ name: string; price: string; image: string; ingredients: string[] } | null>(null)
   const menuCategories = [
     {
       title: "Hot Beverages",
@@ -315,7 +314,6 @@ export default function Menu() {
                       <DialogTrigger asChild>
                         <Button
                           className="w-full bg-amber-600 hover:bg-amber-700"
-                          onClick={() => setSelectedItem(item)}
                         >
                           <Plus className="h-4 w-4 mr-2" />
                           View Details
